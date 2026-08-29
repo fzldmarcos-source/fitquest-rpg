@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#07111f">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="FitQuest">
+<title>FitQuest RPG</title>
+<link rel="manifest" href="./manifest.json">
+<link rel="apple-touch-icon" sizes="192x192" href="./icon-192.png">
+<style>
+:root{--bg:#07111f;--card:#101c31;--card2:#0b1628;--line:#253b5e;--text:#f4f8ff;--muted:#96a8c4;--accent:#6fd3ff;--good:#7be3a1;--gold:#ffd86a;--danger:#ff8b9b;--violet:#b29cff}*{box-sizing:border-box}body{margin:0;font-family:Inter,ui-rounded,system-ui,-apple-system,Segoe UI,sans-serif;background:radial-gradient(circle at 50% -20%,#19365d 0,#07111f 45%);color:var(--text)}button,input,select{font:inherit}.wrap{max-width:760px;margin:auto;padding:14px 12px 120px}.top{display:flex;gap:12px;align-items:center}.avatarWrap{position:relative;width:86px;height:86px;flex:0 0 auto}.avatarRing{position:absolute;inset:0;border-radius:28px;background:conic-gradient(var(--accent) var(--ring),#243552 0)}.avatarCore{position:absolute;inset:5px;border-radius:24px;background:linear-gradient(145deg,#162b4b,#0d182b);display:grid;place-items:center;font-size:43px;border:1px solid #335078}.levelPill{margin-left:auto;padding:9px 12px;border-radius:999px;background:#1c3151;border:1px solid #31527d;font-weight:900;color:var(--accent)}h1{font-size:28px;margin:0}.muted{color:var(--muted)}.card{background:linear-gradient(180deg,rgba(16,28,49,.97),rgba(11,22,40,.97));border:1px solid var(--line);border-radius:22px;padding:15px;margin-top:12px;box-shadow:0 18px 45px #0005}.row{display:flex;align-items:center;justify-content:space-between;gap:10px}.stat{font-size:26px;font-weight:950}.xpbar,.bar{height:13px;border-radius:99px;background:#223451;overflow:hidden}.xpbar>div,.bar>div{height:100%;background:linear-gradient(90deg,var(--accent),var(--good));transition:width .35s ease}.tabs{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:12px}.btn{border:0;border-radius:15px;padding:13px 11px;font-weight:850;cursor:pointer}.tab{background:#13233c;color:#aebdd4;padding:11px 5px}.tab.active{background:#27466d;color:white}.primary{background:var(--accent);color:#06233a}.good{background:var(--good);color:#0b331a}.warn{background:var(--gold);color:#392b00}.secondary{background:#243a5d;color:#eef5ff}.danger{background:#412734;color:#ffdce3}.grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.panel{display:none}.panel.active{display:block}.quest,.achievement,.historyItem,.reward,.bossItem{background:#091525;border:1px solid #213655;border-radius:15px;padding:11px;margin-top:8px}.quest.done,.achievement.done{background:#10261c;border-color:#3c7950}.bossCard{background:linear-gradient(145deg,#25162e,#101b31);border-color:#58436c}.bossIcon{font-size:42px}.pill{display:inline-flex;padding:5px 9px;border-radius:999px;background:#203451;font-size:12px;font-weight:800}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.statbox{background:#091525;border:1px solid #1f3453;border-radius:15px;padding:10px;text-align:center}.statbox b{display:block;font-size:20px}.form{display:grid;gap:9px}.form input,.form select{width:100%;padding:12px;border-radius:13px;border:1px solid #304b72;background:#091525;color:white}.skillGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.skill{background:#091525;border:1px solid #213655;border-radius:16px;padding:12px}.skillTop{display:flex;justify-content:space-between;gap:8px}.tiny{font-size:12px}.streakBox{display:flex;gap:8px;overflow:auto;padding-bottom:3px}.day{min-width:47px;text-align:center;padding:9px 5px;border-radius:14px;background:#0b1729;border:1px solid #223754}.day.done{background:#123223;border-color:#3f7d54}.day.today{outline:2px solid var(--accent)}.missionOverlay{position:fixed;inset:0;background:#020914e8;display:none;z-index:99;align-items:center;justify-content:center;padding:22px}.missionOverlay.show{display:flex}.missionBox{max-width:400px;width:100%;text-align:center;background:radial-gradient(circle at top,#254a70,#0b1729 58%);border:1px solid #4b709a;border-radius:28px;padding:28px 18px;box-shadow:0 28px 90px #000}.missionIcon{font-size:68px;animation:pop .45s ease}.xpGain{font-size:36px;font-weight:950;color:var(--gold)}@keyframes pop{0%{transform:scale(.4) rotate(-12deg);opacity:0}100%{transform:scale(1);opacity:1}}.charStage{text-align:center;padding:15px;background:radial-gradient(circle,#18365c,#091525 65%);border-radius:20px;border:1px solid #25466d}.char{font-size:90px;filter:drop-shadow(0 12px 14px #0007)}.titleRank{font-size:20px;font-weight:950}.footer{position:fixed;left:0;right:0;bottom:0;padding:9px 12px calc(9px + env(safe-area-inset-bottom));text-align:center;background:#07111ee8;backdrop-filter:blur(14px);border-top:1px solid #203552;color:#9aacc6;font-size:12px}.smallBtn{padding:8px 10px;font-size:12px}.note{padding:9px 11px;border-radius:13px;background:#0b1729;border-left:3px solid var(--accent);color:#bdc9dc;font-size:13px}.hidden{display:none}@media(max-width:580px){.tabs{grid-template-columns:repeat(5,1fr);font-size:11px}.stats{grid-template-columns:repeat(2,1fr)}.grid,.skillGrid{grid-template-columns:1fr}.avatarWrap{width:74px;height:74px}.avatarCore{font-size:36px}h1{font-size:24px}}
+</style></head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <div class="avatarWrap"><div class="avatarRing" id="avatarRing"></div><div class="avatarCore" id="avatar">🧭</div></div>
+    <div><div class="muted tiny">CAMPAÑA · 12 SEMANAS</div><h1>FitQuest RPG</h1><div id="title" class="muted">Aprendiz de la constancia</div></div>
+    <div class="levelPill" id="level">Nv. 1</div>
+  </div>
+
+  <div class="card">
+    <div class="row"><div><div class="muted tiny">EXPERIENCIA</div><div class="stat"><span id="xp">0</span> XP</div></div><div style="text-align:right"><div class="muted tiny">RACHA</div><div class="stat">🔥 <span id="streak">0</span></div></div></div>
+    <div class="xpbar"><div id="xpfill"></div></div>
+    <div class="row muted tiny" style="margin-top:7px"><span id="next">100 XP para subir</span><span id="weekText">Semana 1/12</span></div>
+  </div>
+
+  <div class="tabs">
+    <button class="btn tab active" data-p="today">Hoy</button><button class="btn tab" data-p="character">Personaje</button><button class="btn tab" data-p="progress">Stats</button><button class="btn tab" data-p="achievements">Logros</button><button class="btn tab" data-p="history">Historial</button>
+  </div>
+
+  <section id="today" class="panel active">
+    <div class="card"><h2 style="margin-top:0">⚔️ Misión de hoy</h2><div class="note" id="motivation">No necesitas ganas para empezar. Tu misión es llegar.</div><div class="grid" style="margin-top:12px">
+      <button class="btn primary" onclick="quick('gym')">🏋️ Gimnasio<br><span class="tiny">+50 XP</span></button>
+      <button class="btn primary" onclick="quick('swim')">🏊 Natación<br><span class="tiny">+50 XP</span></button>
+      <button class="btn warn" onclick="quick('minimum')">⚡ Sesión mínima<br><span class="tiny">+30 XP</span></button>
+      <button class="btn good" onclick="quick('noganas')">🧠 Fui sin ganas<br><span class="tiny">+65 XP total</span></button>
+    </div>
+    <details style="margin-top:12px"><summary class="muted">Registrar entrenamiento con detalles</summary><div class="form" style="margin-top:10px"><select id="type"><option value="gym">Gimnasio</option><option value="swim">Natación</option></select><input id="duration" type="number" min="1" placeholder="Duración (min)"><input id="metric" type="number" min="0" placeholder="Metros nadados / carga destacada"><input id="note" placeholder="Marca, ejercicio, sensaciones..."><button class="btn secondary" onclick="detailed()">Completar misión +50 XP</button></div></details></div>
+
+    <div class="card"><h2 style="margin-top:0">🔥 Racha semanal</h2><div id="streakDays" class="streakBox"></div></div>
+    <div class="card"><h2 style="margin-top:0">📜 Misiones semanales</h2><div id="missions"></div></div>
+    <div class="card bossCard"><div class="row"><div><div class="muted tiny">BOSS ACTUAL</div><h2 id="bossName" style="margin:3px 0">Guardián de la Semana 4</h2></div><div class="bossIcon" id="bossIcon">👹</div></div><div class="row"><span class="muted" id="bossText"></span><span class="pill" id="bossPct">0%</span></div><div class="bar" style="margin-top:9px"><div id="bossBar"></div></div></div>
+  </section>
+
+  <section id="character" class="panel">
+    <div class="card"><div class="charStage"><div class="char" id="charBig">🧭</div><div class="titleRank" id="charTitle">Aprendiz de la constancia</div><div class="muted" id="charSub">Tu personaje evoluciona al acumular XP.</div></div></div>
+    <div class="card"><h2 style="margin-top:0">🧬 Atributos</h2><div class="skillGrid" id="skills"></div></div>
+    <div class="card"><h2 style="margin-top:0">🎁 Próximas recompensas</h2><div id="rewards"></div></div>
+  </section>
+
+  <section id="progress" class="panel">
+    <div class="card"><h2 style="margin-top:0">📊 Tu campaña</h2><div class="stats"><div class="statbox"><b id="sessions">0</b><span class="muted tiny">sesiones</span></div><div class="statbox"><b id="gymCount">0</b><span class="muted tiny">gimnasio</span></div><div class="statbox"><b id="swimCount">0</b><span class="muted tiny">natación</span></div><div class="statbox"><b id="meters">0</b><span class="muted tiny">metros</span></div><div class="statbox"><b id="minutes">0</b><span class="muted tiny">min activos</span></div><div class="statbox"><b id="noGanas">0</b><span class="muted tiny">victorias mentales</span></div></div></div>
+    <div class="card"><h2 style="margin-top:0">📸 Checkpoint</h2><div class="form"><input id="weight" type="number" step="0.1" placeholder="Peso (kg, opcional)"><input id="waist" type="number" step="0.1" placeholder="Cintura (cm, opcional)"><input id="photo" type="file" accept="image/*"><button class="btn secondary" onclick="checkpoint()">Guardar checkpoint +20 XP</button></div><div class="muted tiny" style="margin-top:8px">Ideal cada 4 semanas. La foto permanece en este dispositivo.</div><div id="checkpoints" style="margin-top:8px"></div></div>
+  </section>
+
+  <section id="achievements" class="panel"><div class="card"><h2 style="margin-top:0">🏆 Logros</h2><div id="achievementsList"></div></div></section>
+  <section id="history" class="panel"><div class="card"><div class="row"><h2 style="margin:0">📚 Historial</h2><button class="btn danger smallBtn" onclick="resetAll()">Reiniciar</button></div><div id="historyList" style="margin-top:8px"></div></div><div class="card"><button class="btn secondary" onclick="exportData()">Exportar respaldo JSON</button></div></section>
+</div>
+<div class="footer">🎯 Regla maestra: éxito = llegar. El rendimiento viene después.</div>
+<div class="missionOverlay" id="overlay" onclick="closeOverlay()"><div class="missionBox" onclick="event.stopPropagation()"><div class="missionIcon" id="overlayIcon">⚔️</div><h2 id="overlayTitle">¡Misión completada!</h2><div class="xpGain" id="overlayXP">+50 XP</div><p class="muted" id="overlayText"></p><button class="btn primary" onclick="closeOverlay()">Continuar aventura</button></div></div>
+<script>
+const LEVEL=100, KEY='fitquest3', START='fitquestStart';
+if(!localStorage.getItem(START)) localStorage.setItem(START,new Date().toISOString());
+let legacy=localStorage.getItem('fitquest2');
+let s=JSON.parse(localStorage.getItem(KEY)||legacy||'{"xp":0,"streak":0,"lastDate":"","entries":[],"checkpoints":[]}');
+const ranks=[
+['🧭','Aprendiz de la constancia'],['🥾','Explorador del impulso'],['⚔️','Guerrero del hábito'],['🏊','Nadador de acero'],['🏋️','Forjador de fuerza'],['🔥','Maestro de la racha'],['🛡️','Centinela del progreso'],['🐉','Cazador de excusas'],['👑','Titán de la constancia'],['⚡','Leyenda de FitQuest']];
+const quotes=['No necesitas ganas para empezar. Tu misión es llegar.','Una sesión imperfecta derrota a una sesión que nunca empezó.','Hoy no compites contra nadie: solo contra la excusa de quedarte.','Tu yo de 12 semanas se construye con la sesión de hoy.','La motivación aparece muchas veces después de empezar.','Día difícil = XP más valioso.'];
+const achievements=[
+['Primer paso','Completa tu primera sesión',x=>x.entries.length>=1],['Sin negociar','Ve 3 veces aunque no tengas ganas',x=>x.entries.filter(e=>e.kind==='noganas').length>=3],['Doble disciplina','Haz gimnasio y natación',x=>x.entries.some(e=>e.type==='gym')&&x.entries.some(e=>e.type==='swim')],['Semana sólida','Completa 3 sesiones en una semana',x=>weekSessions()>=3],['En llamas','Consigue una racha de 5 días',x=>x.streak>=5],['Kilómetro azul','Acumula 1.000 m nadados',x=>swimMeters()>=1000],['Cinco horas','Acumula 300 min activos',x=>activeMinutes()>=300],['Veterano','Completa 25 sesiones',x=>x.entries.length>=25],['Mente sobre materia','10 victorias de “fui sin ganas”',x=>x.entries.filter(e=>e.kind==='noganas').length>=10],['Boss final','Completa 36 sesiones',x=>x.entries.length>=36]];
+function el(id){return document.getElementById(id)}
+function dateKey(d=new Date()){let z=new Date(d.getTime()-d.getTimezoneOffset()*60000);return z.toISOString().slice(0,10)}
+function save(){localStorage.setItem(KEY,JSON.stringify(s));render()}
+function award(entry,xp,icon='⚔️',message='La constancia ganó hoy.'){
+ let d=dateKey(); if(s.lastDate!==d){let y=new Date();y.setDate(y.getDate()-1);s.streak=s.lastDate===dateKey(y)?s.streak+1:1;s.lastDate=d}
+ s.xp+=xp;s.entries.unshift({...entry,xp,date:new Date().toLocaleString('es-CL'),day:d});save();showOverlay(icon,entry.name,xp,message)
+}
+function quick(k){let m={gym:['Gimnasio completado',50,'gym','🏋️','Fuerza + disciplina. Otra misión cerrada.'],swim:['Natación completada',50,'swim','🏊','Entraste al agua y sumaste progreso real.'],minimum:['Sesión mínima',30,'minimum','⚡','Hoy protegiste el hábito. Eso cuenta.'],noganas:['Fui aunque no quería',65,'noganas','🧠','Victoria mental: actuaste sin esperar motivación.']}[k];award({name:m[0],kind:k,type:m[2],duration:0,metric:0,note:''},m[1],m[3],m[4])}
+function detailed(){let type=el('type').value,duration=+el('duration').value||0,metric=+el('metric').value||0,note=el('note').value;award({name:type==='gym'?'Gimnasio con métricas':'Natación con métricas',kind:'detailed',type,duration,metric,note},50,type==='gym'?'🏋️':'🏊','Misión registrada con progreso medible.');['duration','metric','note'].forEach(i=>el(i).value='')}
+function showOverlay(icon,title,xp,text){el('overlayIcon').textContent=icon;el('overlayTitle').textContent='¡'+title+'!';el('overlayXP').textContent='+'+xp+' XP';el('overlayText').textContent=text;el('overlay').classList.add('show')}
+function closeOverlay(){el('overlay').classList.remove('show')}
+function weekNumber(){let st=new Date(localStorage.getItem(START)),now=new Date();return Math.min(12,Math.max(1,Math.floor((now-st)/604800000)+1))}
+function monday(){let n=new Date(),dow=(n.getDay()+6)%7,m=new Date(n);m.setDate(n.getDate()-dow);m.setHours(0,0,0,0);return m}
+function isThisWeek(day){return new Date(day+'T12:00:00')>=monday()}
+function weekSessions(){return s.entries.filter(e=>isThisWeek(e.day)).length}
+function swimMeters(){return s.entries.filter(e=>e.type==='swim').reduce((a,e)=>a+(e.metric||0),0)}
+function activeMinutes(){return s.entries.reduce((a,e)=>a+(e.duration||0),0)}
+function checkpoint(){let w=el('weight').value,wa=el('waist').value,file=el('photo').files[0];let finish=photo=>{s.xp+=20;s.checkpoints.unshift({date:new Date().toLocaleDateString('es-CL'),weight:w,waist:wa,photo});save();el('weight').value='';el('waist').value='';el('photo').value='';showOverlay('📸','Checkpoint guardado',20,'Medir el camino también es parte del progreso.')};if(file){let r=new FileReader();r.onload=()=>finish(r.result);r.readAsDataURL(file)}else finish('')}
+function renderDays(){let m=monday(),html='';for(let i=0;i<7;i++){let d=new Date(m);d.setDate(m.getDate()+i);let k=dateKey(d),done=s.entries.some(e=>e.day===k),today=k===dateKey();html+=`<div class="day ${done?'done':''} ${today?'today':''}"><b>${['L','M','X','J','V','S','D'][i]}</b><br>${done?'✅':'·'}</div>`}el('streakDays').innerHTML=html}
+function skill(name,icon,val,max){let p=Math.min(100,Math.round(val/max*100));return `<div class="skill"><div class="skillTop"><b>${icon} ${name}</b><span>${p}%</span></div><div class="bar" style="margin-top:7px"><div style="width:${p}%"></div></div></div>`}
+function render(){let lvl=Math.floor(s.xp/LEVEL)+1,into=s.xp%LEVEL,rank=ranks[Math.min(ranks.length-1,lvl-1)],w=weekNumber();el('xp').textContent=s.xp;el('streak').textContent=s.streak;el('level').textContent='Nv. '+lvl;el('xpfill').style.width=into+'%';el('avatarRing').style.setProperty('--ring',into+'%');el('next').textContent=(LEVEL-into)+' XP para nivel '+(lvl+1);el('weekText').textContent='Semana '+w+'/12';el('title').textContent=rank[1];el('avatar').textContent=rank[0];el('charBig').textContent=rank[0];el('charTitle').textContent=rank[1];el('charSub').textContent=`Nivel ${lvl} · ${s.xp} XP acumulados`;el('motivation').textContent=quotes[(new Date().getDate()+w)%quotes.length];
+ let wc=weekSessions(),hasSw=s.entries.some(e=>e.type==='swim'&&isThisWeek(e.day)),hasGym=s.entries.some(e=>e.type==='gym'&&isThisWeek(e.day)),hasN=s.entries.some(e=>e.kind==='noganas'&&isThisWeek(e.day));el('missions').innerHTML=[[wc>=3,`3 sesiones esta semana (${Math.min(wc,3)}/3)`],[hasGym,'1 misión de gimnasio'],[hasSw,'1 misión de natación'],[hasN,'1 victoria “fui sin ganas”']].map(x=>`<div class="quest ${x[0]?'done':''}">${x[0]?'✅':'⬜'} ${x[1]}</div>`).join('');
+ let block=Math.ceil(w/4),target=block*12,done=s.entries.length,pct=Math.min(100,Math.round(done/target*100)),bosses=['👹','🐲','👑'];el('bossName').textContent=block<3?'Guardián de la Semana '+(block*4):'Boss Final · Semana 12';el('bossIcon').textContent=bosses[Math.min(2,block-1)];el('bossPct').textContent=pct+'%';el('bossBar').style.width=pct+'%';el('bossText').textContent=`${done}/${target} sesiones acumuladas`;
+ el('sessions').textContent=s.entries.length;el('gymCount').textContent=s.entries.filter(e=>e.type==='gym').length;el('swimCount').textContent=s.entries.filter(e=>e.type==='swim').length;el('meters').textContent=swimMeters().toLocaleString('es-CL');el('minutes').textContent=activeMinutes();el('noGanas').textContent=s.entries.filter(e=>e.kind==='noganas').length;
+ el('skills').innerHTML=skill('Fuerza','🏋️',s.entries.filter(e=>e.type==='gym').length,18)+skill('Resistencia','🏊',s.entries.filter(e=>e.type==='swim').length,18)+skill('Disciplina','🧠',s.entries.filter(e=>e.kind==='noganas').length,10)+skill('Constancia','🔥',s.entries.length,36);
+ el('achievementsList').innerHTML=achievements.map(a=>`<div class="achievement ${a[2](s)?'done':''}">${a[2](s)?'🏆':'🔒'} <b>${a[0]}</b><br><span class="muted tiny">${a[1]}</span></div>`).join('');
+ el('rewards').innerHTML=[[3,'Recompensa pequeña elegida por ti'],[5,'Algo que mejore tu entrenamiento'],[8,'Experiencia o compra especial'],[12,'Celebración del Boss Final']].map(r=>`<div class="reward">${lvl>=r[0]?'🎁':'🔒'} <b>Nivel ${r[0]}</b> · ${r[1]}</div>`).join('');
+ el('historyList').innerHTML=s.entries.length?s.entries.map(e=>`<div class="historyItem"><b>${esc(e.name)}</b> · +${e.xp} XP<br><span class="muted tiny">${e.date}${e.duration?' · '+e.duration+' min':''}${e.metric?' · '+e.metric+(e.type==='swim'?' m':''):''}${e.note?' · '+esc(e.note):''}</span></div>`).join(''):'<span class="muted">Aún no hay actividad.</span>';
+ el('checkpoints').innerHTML=s.checkpoints.length?s.checkpoints.slice(0,6).map(c=>`<div class="historyItem"><b>${c.date}</b>${c.weight?' · '+c.weight+' kg':''}${c.waist?' · cintura '+c.waist+' cm':''}${c.photo?`<br><img src="${c.photo}" style="width:100%;max-height:220px;object-fit:cover;border-radius:12px;margin-top:8px">`:''}</div>`).join(''):'<span class="muted tiny">Aún no hay checkpoints.</span>';renderDays()}
+function esc(x){return String(x).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function exportData(){let b=new Blob([JSON.stringify(s,null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='fitquest-respaldo.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}
+function resetAll(){if(confirm('¿Reiniciar todo el progreso de FitQuest?')){s={xp:0,streak:0,lastDate:'',entries:[],checkpoints:[]};localStorage.setItem(START,new Date().toISOString());save()}}
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tab,.panel').forEach(x=>x.classList.remove('active'));b.classList.add('active');el(b.dataset.p).classList.add('active')});if('serviceWorker'in navigator)navigator.serviceWorker.register('./sw.js').catch(()=>{});render();
+</script></body></html>
